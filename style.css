@@ -4,11 +4,15 @@
   box-sizing: border-box;
   transition: 0.4s ease;
   border-radius: 8px;
+  font-family: "Inter", sans-serif;
 }
 body {
   display: flex;
   flex-direction: column;
-  gap: 200px;
+  gap: 100px;
+  height: 100vh;
+  background-color: aliceblue;
+  justify-content: center;
 }
 
 .header {
@@ -19,9 +23,13 @@ body {
 .main {
   display: flex;
   justify-content: center;
+  gap: 50px;
+}
+.label {
+  padding: 10px 30px;
 }
 .text {
-  width: 500px;
+  padding: 30px;
   font-size: 30px;
   color: #ff853f;
 }
@@ -37,14 +45,27 @@ body {
 .image {
   background-size: cover;
   background-repeat: no-repeat;
-  width: 500px;
-  height: 500px;
+  width: 800px;
+  height: 400px;
 }
-
+.buttons-texts {
+  width: 800px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+}
+.buttons {
+  display: flex;
+  width: 800px;
+  justify-content: space-around;
+}
 button {
+  border-radius: 0%;
   font-size: 50px;
   border: none;
+  width: 800px;
 }
-button:active {
-  transform: scale(1.2);
+.background {
+  background-color: white;
 }
