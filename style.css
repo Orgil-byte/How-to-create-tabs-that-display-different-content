@@ -1,0 +1,44 @@
+* {
+  padding: 0%;
+  margin: 0%;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  gap: 200px;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.main {
+  display: flex;
+  justify-content: center;
+}
+.text {
+  width: 500px;
+  font-size: 30px;
+  color: #ff853f;
+}
+.image1 {
+  background-image: url(./beautiful-fall-nature-scenery-free-image.webp);
+}
+.image2 {
+  background-image: url(./istockphoto-517188688-1024x1024.jpg);
+}
+.image3 {
+  background-image: url(./thumb-1920-1302094.jpg);
+}
+.image {
+  background-size: cover;
+  background-repeat: no-repeat;
+  width: 500px;
+  height: 500px;
+}
+
+button {
+  font-size: 50px;
+  border: none;
+}
