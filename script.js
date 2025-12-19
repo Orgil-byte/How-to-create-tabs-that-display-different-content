@@ -29,16 +29,10 @@ const contents = [
 
 const btn = (contentId) => {
   const content = contents.find((item) => item.id === contentId);
-  if (content.id === contentId) {
-    image.classList.add(content.picture);
-    label.textContent = content.label;
-    section.forEach((element) => {
-      element.classList.add(content.buttonActive);
-    });
-  } else {
-    image.classList.remove(content.picture);
-    section.forEach((element) => {
-      element.classList.remove(content.buttonActive);
-    });
-  }
+  image.classList.remove(`image1`, `image2`, `image3`);
+  image.classList.add(content.picture);
+  label.textContent = content.label;
+  section.forEach((element) => {
+    element.classList.add(content.buttonActive);
+  });
 };
