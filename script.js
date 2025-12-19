@@ -1,52 +1,44 @@
 const label = document.querySelector(".label");
-const image = document.querySelector(`.images`);
+const image = document.querySelector(`.image`);
 const text = document.querySelector(`.text`);
-const allBtns = document.querySelectorAll(`.image`);
-const history = document.getElementById(`history`);
-const vision = document.getElementById(`vision`);
-const goals = document.getElementById(`goals`);
+const section = document.querySelectorAll(`.section`);
 
-const historyBtn = () => {
-  buttons(0);
-};
+const contents = [
+  {
+    id: 0,
+    picture: "image1",
+    buttonActive: `background`,
+    label: `History`,
+    textColor: `#ff853f`,
+  },
+  {
+    id: 1,
+    picture: "image2",
+    buttonActive: `background`,
+    label: `Vision`,
+    textColor: `#96bbab`,
+  },
+  {
+    id: 2,
+    picture: "image3",
+    buttonActive: `background`,
+    label: `Goals`,
+    textColor: `#79c0d7`,
+  },
+];
 
-const visionBtn = () => {
-  buttons(1);
-};
-
-const goalsBtn = () => {
-  buttons(2);
-};
-
-const buttons = (index) => {
-  allBtns.forEach((image) => {
-    if (index === 0) {
-      image.classList.add(`image1`);
-      image.classList.remove(`image2`);
-      image.classList.remove(`image3`);
-      history.classList.add(`background`);
-      vision.classList.remove(`background`);
-      goals.classList.remove(`background`);
-      label.textContent = `History`;
-      text.style.color = `#ff853f`;
-    } else if (index === 1) {
-      image.classList.remove(`image1`);
-      image.classList.add(`image2`);
-      image.classList.remove(`image3`);
-      history.classList.remove(`background`);
-      vision.classList.add(`background`);
-      goals.classList.remove(`background`);
-      label.textContent = `Vision`;
-      text.style.color = `#96bbab`;
-    } else if (index === 2) {
-      image.classList.remove(`image1`);
-      image.classList.remove(`image2`);
-      image.classList.add(`image3`);
-      history.classList.remove(`background`);
-      vision.classList.remove(`background`);
-      goals.classList.add(`background`);
-      label.textContent = `Goals`;
-      text.style.color = `#79c0d7`;
-    }
-  });
+const btn = (contentId) => {
+  const content = contents.find((item) => item.id === contentId);
+  if (content.id === contentId) {
+    image.classList.add(content.picture);
+    label.textContent = content.label;
+    section.forEach((element) => {
+      element.classList.add(content.buttonActive);
+    });
+  } else {
+    image.classList.remove(content.picture);
+    section.forEach((element) => {
+      element.classList.remove(content.buttonActive);
+    });
+  }
 };
